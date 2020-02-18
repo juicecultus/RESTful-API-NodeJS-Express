@@ -4,22 +4,32 @@ const app = express();
 
 app.use(express.json()); // add middleware
 
+app.use(function(req, res, next) {
+  console.log('Logging...');
+  next();
+});
+
+app.use(function(req, res, next) {
+  console.log('Authenticating...');
+  next();
+});
+
 // DB stored in local memory
-const courses = [
-  { id: 1, name: 'course1' },
-  { id: 2, name: 'course2' },
-  { id: 3, name: 'course3' }
+const genres = [
+  { id: 1, name: 'Action' },
+  { id: 2, name: 'Horror' },
+  { id: 3, name: 'Romance' }
 ];
 
 // Joi schema validation
-function validateCourse(course) {
+function validateGenre(genre) {
   const schema = Joi.object({
     name: Joi.string()
       .min(3)
       .required()
   });
 
-  return schema.validate(course);
+  return schema.validate(genre);
 }
 
 // Handle GET requests
@@ -27,53 +37,53 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.get('/api/courses', (req, res) => {
-  res.send(courses);
+app.get('/api/genres', (req, res) => {
+  res.send(genres);
 });
 
-app.get('/api/courses/:id', (req, res) => {
-  const course = courses.find(c => c.id === parseInt(req.params.id));
-  if (!course)
-    return res.status(404).send('The course with the given ID was not found.');
-  res.send(course);
+app.get('/api/genres/:id', (req, res) => {
+  const genre = genres.find(c => c.id === parseInt(req.params.id));
+  if (!genre)
+    return res.status(404).send('The genre with the given ID was not found.');
+  res.send(genre);
 });
 
 // Handle POST requests
-app.post('/api/courses', (req, res) => {
-  const { error } = validateCourse(req.body);
+app.post('/api/genres', (req, res) => {
+  const { error } = validateGenre(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const course = {
-    id: courses.length + 1,
+  const genre = {
+    id: genres.length + 1,
     name: req.body.name
   };
-  courses.push(course);
-  res.send(course);
+  genres.push(genre);
+  res.send(genre);
 });
 
 // Handle PUT requests
-app.put('/api/courses/:id', (req, res) => {
-  const course = courses.find(c => c.id === parseInt(req.params.id));
-  if (!course)
-    return res.status(404).send('The course with the given ID was not found.');
+app.put('/api/genres/:id', (req, res) => {
+  const genre = genres.find(c => c.id === parseInt(req.params.id));
+  if (!genre)
+    return res.status(404).send('The genre with the given ID was not found.');
 
-  const { error } = validateCourse(req.body);
+  const { error } = validateGenre(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  course.name = req.body.name;
-  res.send(course);
+  genre.name = req.body.name;
+  res.send(genre);
 });
 
 // Handle DELETE requests
-app.delete('/api/courses/:id', (req, res) => {
-  const course = courses.find(c => c.id === parseInt(req.params.id));
-  if (!course)
-    return res.status(404).send('The course with the given ID was not found.');
+app.delete('/api/genres/:id', (req, res) => {
+  const genre = genres.find(c => c.id === parseInt(req.params.id));
+  if (!genre)
+    return res.status(404).send('The genre with the given ID was not found.');
 
-  const index = courses.indexOf(course);
-  courses.splice(index, 1);
+  const index = genres.indexOf(genre);
+  genres.splice(index, 1);
 
-  res.send(course);
+  res.send(genre);
 });
 
 // Set port dynamically based on environment
