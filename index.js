@@ -6,6 +6,9 @@ const Joi = require('@hapi/joi');
 const express = require('express');
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', './views'); // default
+
 app.use(express.json()); // add middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -41,7 +44,7 @@ function validateGenre(genre) {
 
 // Handle GET requests
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.render('index', { title: 'My RESTful API', message: 'Hello' });
 });
 
 app.get('/api/genres', (req, res) => {
