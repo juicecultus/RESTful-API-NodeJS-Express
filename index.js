@@ -1,18 +1,14 @@
+const morgan = require('morgan');
+const helmet = require('helmet');
 const Joi = require('@hapi/joi');
 const express = require('express');
 const app = express();
 
 app.use(express.json()); // add middleware
-
-app.use(function(req, res, next) {
-  console.log('Logging...');
-  next();
-});
-
-app.use(function(req, res, next) {
-  console.log('Authenticating...');
-  next();
-});
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
+app.use(helmet());
+app.use(morgan('tiny'));
 
 // DB stored in local memory
 const genres = [
