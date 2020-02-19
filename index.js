@@ -8,7 +8,11 @@ app.use(express.json()); // add middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(helmet());
-app.use(morgan('tiny'));
+
+if (app.get('env') === 'development') {
+  app.use(morgan('tiny'));
+  console.log('Morgan enabled...');
+}
 
 // DB stored in local memory
 const genres = [
