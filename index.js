@@ -2,12 +2,20 @@ const debug = require('debug')('app:startup');
 const config = require('config');
 const morgan = require('morgan');
 const helmet = require('helmet');
-const Joi = require('@hapi/joi');
+const mongoose = require('mongoose');
 const logger = require('./middleware/logger');
 const genres = require('./routes/genres');
 const home = require('./routes/home');
 const express = require('express');
 const app = express();
+
+mongoose
+  .connect('mongodb://localhost/vidly', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => console.log('Connected to MongoDB...'))
+  .catch(err => console.error('Could not connect to MongoDB...'));
 
 app.set('view engine', 'pug');
 app.set('views', './views'); // default
