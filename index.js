@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const mongoose = require('mongoose');
 const logger = require('./middleware/logger');
 const genres = require('./routes/genres');
+const customers = require('./routes/customers');
 const home = require('./routes/home');
 const express = require('express');
 const app = express();
@@ -24,8 +25,9 @@ app.use(express.json()); // add middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(helmet());
-app.use('/api/genres', genres);
 app.use('/', home);
+app.use('/api/genres', genres);
+app.use('/api/customers', customers);
 
 app.use(logger);
 
