@@ -2,17 +2,16 @@ const Joi = require('@hapi/joi');
 const mongoose = require('mongoose');
 
 // DB stored in MongoDB
-const Genre = mongoose.model(
-  'Genre',
-  new mongoose.Schema({
-    name: {
-      type: String,
-      required: true,
-      minlength: 5,
-      maxlength: 50
-    }
-  })
-);
+const genreSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    minlength: 5,
+    maxlength: 50
+  }
+});
+
+const Genre = mongoose.model('Genre', genreSchema);
 
 // DB stored in local memory
 // const genres = [
