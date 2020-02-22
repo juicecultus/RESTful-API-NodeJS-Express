@@ -12,15 +12,14 @@ router.post('/', async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
   if (user) return res.status(400).send('User already registered.');
 
-  user = new User({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password
-  });
+  try {
+    user = new User(_.pick(req.body, ['name', 'email', 'password']));
+    await user.save();
 
-  await user.save();
-
-  res.send(_.pick(user, ['_id', 'name', 'email']));
+    res.send(_.pick(user, ['_id', 'name', 'email']));
+  } catch (error) {
+    res.status(500).send('Something failed.');
+  }
 });
 
 module.exports = router;
