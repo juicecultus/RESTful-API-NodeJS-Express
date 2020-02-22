@@ -5,7 +5,6 @@ const helmet = require('helmet');
 const Joi = require('@hapi/joi');
 Joi.objectId = require('joi-objectid')(Joi);
 const mongoose = require('mongoose');
-const logger = require('./middleware/logger');
 const genres = require('./routes/genres');
 const customers = require('./routes/customers');
 const movies = require('./routes/movies');
@@ -28,7 +27,7 @@ mongoose
     useCreateIndex: true
   })
   .then(() => console.log('Connected to MongoDB...'))
-  .catch(err => console.error('Could not connect to MongoDB...'));
+  .catch(() => console.error('Could not connect to MongoDB...'));
 
 app.set('view engine', 'pug');
 app.set('views', './views'); // default
@@ -44,8 +43,6 @@ app.use('/api/movies', movies);
 app.use('/api/rentals', rentals);
 app.use('/api/users', users);
 app.use('/api/auth', auth);
-
-app.use(logger);
 
 // Configuration
 console.log('Application Name: ' + config.get('name'));

@@ -1,8 +1,6 @@
 const bcrypt = require('bcrypt');
 const _ = require('lodash');
 const { User, validate } = require('../models/user');
-const Joi = require('@hapi/joi');
-const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
