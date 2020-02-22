@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const _ = require('lodash');
 const { User, validate } = require('../models/user');
 const Joi = require('@hapi/joi');
@@ -14,11 +15,13 @@ router.post('/', async (req, res) => {
 
   try {
     user = new User(_.pick(req.body, ['name', 'email', 'password']));
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(user.password, salt);
     await user.save();
 
     res.send(_.pick(user, ['_id', 'name', 'email']));
   } catch (error) {
-    res.status(500).send('Something failed.');
+    res.status(500).send('Something failed - please try again.');
   }
 });
 
