@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "fawn": "^2.1.5",
     "helmet": "^3.21.2",
+    "joi-objectid": "^3.0.1",
     "mongodb": "^3.5.3",
     "mongoose": "^5.9.2",
     "morgan": "^1.9.1",
