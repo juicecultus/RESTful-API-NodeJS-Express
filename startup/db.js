@@ -1,4 +1,4 @@
-const logger = require('../config/winston');
+const logger = require('./logging');
 const mongoose = require('mongoose');
 
 module.exports = function() {

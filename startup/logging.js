@@ -1,6 +1,7 @@
 const appRoot = require('app-root-path');
 const winston = require('winston');
 require('winston-mongodb');
+require('express-async-errors');
 
 // define the custom settings for each transport (file, console)
 const options = {
