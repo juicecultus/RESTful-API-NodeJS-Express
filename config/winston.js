@@ -1,8 +1,9 @@
 const appRoot = require('app-root-path');
 const winston = require('winston');
+require('winston-mongodb');
 
 // define the custom settings for each transport (file, console)
-var options = {
+const options = {
   file: {
     level: 'info',
     filename: `${appRoot}/logs/app.log`,
@@ -21,7 +22,7 @@ var options = {
 };
 
 // instantiate a new Winston Logger with the settings defined above
-var logger = winston.createLogger({
+const logger = winston.createLogger({
   transports: [
     new winston.transports.File(options.file),
     new winston.transports.Console(options.console),
