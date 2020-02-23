@@ -20,6 +20,15 @@ const home = require('./routes/home');
 const express = require('express');
 const app = express();
 
+process.on('uncaughtException', ex => {
+  logger.error(ex.message, ex);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', ex => {
+  throw ex;
+});
+
 if (!config.get('jwtPrivateKey')) {
   console.error('FATAL ERROR: jwtPrivateKey is not defined.');
   process.exit(1);
