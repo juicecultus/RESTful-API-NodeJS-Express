@@ -1,3 +1,4 @@
+require('express-async-errors');
 const error = require('./middleware/error');
 const debug = require('debug')('app:startup');
 const config = require('config');
