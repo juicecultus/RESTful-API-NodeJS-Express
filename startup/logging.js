@@ -1,7 +1,9 @@
-const appRoot = require('app-root-path');
-const winston = require('winston');
 require('winston-mongodb');
 require('express-async-errors');
+const appRoot = require('app-root-path');
+// const morgan = require('morgan');
+// const debug = require('debug')('app:startup');
+const winston = require('winston');
 
 // define the custom settings for each transport (file, console)
 const options = {
@@ -39,5 +41,19 @@ logger.stream = {
     logger.info(message);
   }
 };
+
+// process.on('uncaughtException', ex => {
+//   logger.error(ex.message, ex);
+//   process.exit(1);
+// });
+
+// process.on('unhandledRejection', ex => {
+//   throw ex;
+// });
+
+// if (app.get('env') === 'development') {
+//   app.use(morgan('combined', { stream: winston.stream }));
+//   debug('Morgan enabled...');
+// }
 
 module.exports = logger;
