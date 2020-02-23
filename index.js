@@ -1,4 +1,7 @@
 require('express-async-errors');
+require('winston-mongodb');
+const winston = require('./config/winston');
+const logger = require('./config/winston');
 const error = require('./middleware/error');
 const debug = require('debug')('app:startup');
 const config = require('config');
@@ -24,8 +27,8 @@ if (!config.get('jwtPrivateKey')) {
 
 mongoose
   .connect('mongodb://localhost/vidly', {
-    useNewUrlParser: true,
     useUnifiedTopology: true,
+    useNewUrlParser: true,
     useCreateIndex: true
   })
   .then(() => console.log('Connected to MongoDB...'))
@@ -53,7 +56,7 @@ console.log('Mail Server: ' + config.get('mail.host'));
 console.log('Mail Password: ' + config.get('mail.password'));
 
 if (app.get('env') === 'development') {
-  app.use(morgan('tiny'));
+  app.use(morgan('combined', { stream: winston.stream }));
   debug('Morgan enabled...');
 }
 
