@@ -42,14 +42,14 @@ logger.stream = {
   }
 };
 
-// process.on('uncaughtException', ex => {
-//   logger.error(ex.message, ex);
-//   process.exit(1);
-// });
+process.on('uncaughtException', ex => {
+  logger.error(ex.message, ex);
+  process.exit(1);
+});
 
-// process.on('unhandledRejection', ex => {
-//   throw ex;
-// });
+process.on('unhandledRejection', ex => {
+  throw ex;
+});
 
 // if (app.get('env') === 'development') {
 //   app.use(morgan('combined', { stream: winston.stream }));
