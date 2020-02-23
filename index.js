@@ -1,3 +1,4 @@
+const error = require('./middleware/error');
 const debug = require('debug')('app:startup');
 const config = require('config');
 const morgan = require('morgan');
@@ -27,7 +28,7 @@ mongoose
     useCreateIndex: true
   })
   .then(() => console.log('Connected to MongoDB...'))
-  .catch(() => console.error('Could not connect to MongoDB...'));
+  .catch(err => console.error('Could not connect to MongoDB...'));
 
 app.set('view engine', 'pug');
 app.set('views', './views'); // default
@@ -43,6 +44,8 @@ app.use('/api/movies', movies);
 app.use('/api/rentals', rentals);
 app.use('/api/users', users);
 app.use('/api/auth', auth);
+
+app.use(error);
 
 // Configuration
 console.log('Application Name: ' + config.get('name'));
