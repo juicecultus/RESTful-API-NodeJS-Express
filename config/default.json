@@ -1,4 +1,5 @@
 {
   "name": "My RESTful API",
-  "jwtPrivateKey": ""
+  "jwtPrivateKey": "",
+  "db": "mongodb://localhost/vidly"
 }

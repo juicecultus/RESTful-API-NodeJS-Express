@@ -1,9 +1,9 @@
-require('winston-mongodb');
+// require('winston-mongodb');
 require('express-async-errors');
+const winston = require('winston');
 const appRoot = require('app-root-path');
 // const morgan = require('morgan');
 // const debug = require('debug')('app:startup');
-const winston = require('winston');
 
 // define the custom settings for each transport (file, console)
 const options = {
@@ -28,8 +28,8 @@ const options = {
 const logger = winston.createLogger({
   transports: [
     new winston.transports.File(options.file),
-    new winston.transports.Console(options.console),
-    new winston.transports.MongoDB({ db: 'mongodb://localhost/vidly' })
+    new winston.transports.Console(options.console)
+    // new winston.transports.MongoDB({ db: 'mongodb://localhost/vidly' })
   ],
   exitOnError: false // do not exit on handled exceptions
 });
