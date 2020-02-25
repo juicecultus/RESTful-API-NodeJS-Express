@@ -1,0 +1,4 @@
+{
+  "name": "My RESTful API",
+  "jwtPrivateKey": "1234"
+}
