@@ -1321,3 +1321,55 @@
 {"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
 {"message":"Listening on port 3000...","level":"info"}
 {"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"level":"error","message":"moment is not definedmoment is not defined","stack":"ReferenceError: moment is not defined\n    at model.rentalSchema.methods.return (/Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/models/rental.js:68:19)\n    at /Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/routes/returns.js:19:3"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"level":"error","message":"moment is not definedmoment is not defined","stack":"ReferenceError: moment is not defined\n    at model.rentalSchema.methods.return (/Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/models/rental.js:68:19)\n    at /Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/routes/returns.js:19:3"}
+{"level":"error","message":"moment is not definedmoment is not defined","stack":"ReferenceError: moment is not defined\n    at model.rentalSchema.methods.return (/Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/models/rental.js:68:19)\n    at /Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/routes/returns.js:19:3"}
+{"level":"error","message":"moment is not definedmoment is not defined","stack":"ReferenceError: moment is not defined\n    at model.rentalSchema.methods.return (/Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/models/rental.js:68:19)\n    at /Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/routes/returns.js:19:3"}
+{"level":"error","message":"moment is not definedmoment is not defined","stack":"ReferenceError: moment is not defined\n    at model.rentalSchema.methods.return (/Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/models/rental.js:68:19)\n    at /Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/routes/returns.js:19:3"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"level":"error","message":"moment is not definedmoment is not defined","stack":"ReferenceError: moment is not defined\n    at model.rentalSchema.methods.return (/Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/models/rental.js:68:19)\n    at /Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/routes/returns.js:19:3"}
+{"level":"error","message":"moment is not definedmoment is not defined","stack":"ReferenceError: moment is not defined\n    at model.rentalSchema.methods.return (/Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/models/rental.js:68:19)\n    at /Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/routes/returns.js:19:3"}
+{"level":"error","message":"moment is not definedmoment is not defined","stack":"ReferenceError: moment is not defined\n    at model.rentalSchema.methods.return (/Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/models/rental.js:68:19)\n    at /Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/routes/returns.js:19:3"}
+{"level":"error","message":"moment is not definedmoment is not defined","stack":"ReferenceError: moment is not defined\n    at model.rentalSchema.methods.return (/Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/models/rental.js:68:19)\n    at /Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/routes/returns.js:19:3"}
+{"level":"error","message":"moment is not definedmoment is not defined","stack":"ReferenceError: moment is not defined\n    at model.rentalSchema.methods.return (/Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/models/rental.js:68:19)\n    at /Users/jus/CODE/Projects-Github/RESTful-API-NodeJS-Express/routes/returns.js:19:3"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
+{"message":"Listening on port 3000...","level":"info"}
+{"message":"Connected to mongodb://localhost/vidly_tests...","level":"info"}
