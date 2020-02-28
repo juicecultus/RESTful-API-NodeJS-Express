@@ -3,15 +3,7 @@ const { Genre } = require('../../models/genre');
 const request = require('supertest');
 
 describe('auth middleware', () => {
-  beforeEach(() => {
-    server = require('../../index');
-    token = new User().generateAuthToken();
-  });
-  afterEach(async () => {
-    await Genre.deleteMany({});
-    await server.close();
-  });
-
+  let server;
   let token;
 
   const exec = () => {
@@ -20,6 +12,15 @@ describe('auth middleware', () => {
       .set('x-auth-token', token)
       .send({ name: 'genre1' });
   };
+
+  beforeEach(() => {
+    server = require('../../index');
+    token = new User().generateAuthToken();
+  });
+  afterEach(async () => {
+    await Genre.deleteMany({});
+    await server.close();
+  });
 
   // beforeEach(() => {
   //   token = new User().generateAuthToken();

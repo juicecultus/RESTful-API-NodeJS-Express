@@ -7,11 +7,11 @@ const { User } = require('../../models/user');
 
 describe('/api/returns', () => {
   let server;
+  let token;
   let customerId;
   let movieId;
   let movie;
   let rental;
-  let token;
 
   const exec = () => {
     return request(server)
@@ -26,7 +26,6 @@ describe('/api/returns', () => {
   beforeEach(async () => {
     server = require('../../index');
     token = new User().generateAuthToken();
-
     customerId = mongoose.Types.ObjectId();
     movieId = mongoose.Types.ObjectId();
 
@@ -55,9 +54,9 @@ describe('/api/returns', () => {
   });
 
   afterEach(async () => {
-    await server.close();
     await Rental.deleteMany({});
     await Movie.deleteMany({});
+    await server.close();
   });
 
   it('should return 401 if client is not logged in', async () => {

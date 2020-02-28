@@ -3,11 +3,11 @@ const request = require('supertest');
 const { Genre } = require('../../models/genre');
 const { User } = require('../../models/user');
 
-let server;
-let token;
-let name;
-
 describe('/api/genres', () => {
+  let server;
+  let token;
+  let name;
+
   beforeEach(() => {
     server = require('../../index');
     token = new User().generateAuthToken();
