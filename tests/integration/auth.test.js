@@ -5,10 +5,11 @@ const request = require('supertest');
 describe('auth middleware', () => {
   beforeEach(() => {
     server = require('../../index');
+    token = new User().generateAuthToken();
   });
   afterEach(async () => {
-    server.close();
     await Genre.deleteMany({});
+    await server.close();
   });
 
   let token;
@@ -20,9 +21,9 @@ describe('auth middleware', () => {
       .send({ name: 'genre1' });
   };
 
-  beforeEach(() => {
-    token = new User().generateAuthToken();
-  });
+  // beforeEach(() => {
+  //   token = new User().generateAuthToken();
+  // });
 
   it('should return 401 if no token is provided', async () => {
     token = '';

@@ -4,14 +4,17 @@ const { Genre } = require('../../models/genre');
 const { User } = require('../../models/user');
 
 let server;
+let token;
+let name;
 
 describe('/api/genres', () => {
   beforeEach(() => {
     server = require('../../index');
+    token = new User().generateAuthToken();
   });
   afterEach(async () => {
-    server.close();
     await Genre.deleteMany({});
+    await server.close();
   });
 
   describe('GET /', () => {
@@ -56,8 +59,8 @@ describe('/api/genres', () => {
     // change one parameter that clearly aligns
     // with the name of the test.
 
-    let token;
-    let name;
+    // let token;
+    // let name;
 
     const exec = async () => {
       return await request(server)
@@ -67,7 +70,7 @@ describe('/api/genres', () => {
     };
 
     beforeEach(() => {
-      token = new User().generateAuthToken();
+      // token = new User().generateAuthToken();
       name = 'genre1';
     });
 
