@@ -26,7 +26,7 @@
     "mongodb": "^3.5.3",
     "mongoose": "^5.9.2",
     "morgan": "^1.9.1",
-    "mpath": "^0.6.0",
+    "mpath": "^0.8.4",
     "pug": "^2.0.4",
     "winston": "^3.2.1",
     "winston-mongodb": "^5.0.1"
