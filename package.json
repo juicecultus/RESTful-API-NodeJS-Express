@@ -20,7 +20,7 @@
     "fawn": "github:e-oj/Fawn#dev",
     "helmet": "^3.21.3",
     "joi-objectid": "^3.0.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "mongodb": "^3.5.3",
